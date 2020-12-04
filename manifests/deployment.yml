@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: ryanpipelinesjavascriptdocker 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ryanpipelinesjavascriptdocker
+  template:
+    metadata:
+      labels:
+        app: ryanpipelinesjavascriptdocker 
+    spec:
+      containers:
+        - name: ryanpipelinesjavascriptdocker 
+          image: ryanmayscontainerregistry.azurecr.io/ryanpipelinesjavascriptdocker
+          ports:
+          - containerPort: 8080
